@@ -1,4 +1,4 @@
-const { Sequelize, sequelize } = require("./db");
+const { Sequelize, sequelize } = require("../db");
 
 const Pokemon = sequelize.define("pokemon", {
   name: {
