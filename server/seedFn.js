@@ -1,6 +1,6 @@
-const {sequelize} = require('./db');
-const {User} = require('./');
-const {Pokemon} = require('./');
+const {sequelize} = require('./db/db');
+const {User} = require('./db/models');
+const {Pokemon} = require('./db/models');
 const {users, pokemons} = require('./seedData');
 
 const seed = async () => {
