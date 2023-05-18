@@ -6,10 +6,12 @@ module.exports = router;
 router.get("/", async (req, res, next) => {
   try {
     const { limit = 10, page = 1 } = req.query;
-    const pokemons = await Pokemon.findAll({
-      limit,
-      offset: limit * (page - 1),
-    });
+    const pokemons = await Pokemon.findAll(
+    //   {
+    //   limit,
+    //   offset: limit * (page - 1),
+    // }
+    );
     res.send(pokemons);
   } catch (error) {
     console.error(error);
