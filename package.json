@@ -5,8 +5,8 @@
   "scripts": {
     "test": "jest --watch-all",
     "seed": "node server/seed.js",
-    "start": "node server/db/index.js",
-    "start-dev": "node server/seed.js &  node server/db/index.js"
+    "start": "parcel public/index.html & node server/db/index.js",
+    "start-dev": " node server/seed.js & node server.js & parcel public/index.html --open"
   },
   "keywords": [],
   "author": "",
