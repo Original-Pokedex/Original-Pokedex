@@ -8,6 +8,6 @@ User.hasMany(Pokemon, {foreignKey: 'ownerId'});
 module.exports = {
     Pokemon,
     User,
-    db: sequelize,
+    sequelize,
     Sequelize
 };
