@@ -5,7 +5,7 @@
     "client-dev": "parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
-    "start": "parcel public/index.html && node server/seed.js && node server.js"
+    "start": "parcel build public/index.html && node server/seed.js && node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.14.2",
     "morgan": "1.10.0",
-    "node": "^20.2.0",
+    "node": "^18.16.0",
     "nodemon": "^2.0.19",
     "parcel": "^2.8.3",
     "parcel-bundler": "^1.3.1",
