@@ -1,16 +1,14 @@
 const router = require("express").Router();
-const { Pokemon, User } = require("../db/models");
-
-module.exports = router;
+const { Pokemon, User } = require("../models");
 
 router.get("/", async (req, res, next) => {
   try {
     const { limit = 10, page = 1 } = req.query;
     const pokemons = await Pokemon.findAll(
-    //   {
-    //   limit,
-    //   offset: limit * (page - 1),
-    // }
+      {
+      limit,
+      offset: limit * (page - 1),
+    }
     );
     res.send(pokemons);
   } catch (error) {
@@ -85,3 +83,5 @@ router.delete("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
+module.exports = router;
