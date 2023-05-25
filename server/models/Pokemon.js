@@ -11,6 +11,9 @@ const Pokemon = sequelize.define("pokemon", {
     type: Sequelize.STRING,
     defaultValue: "https://mocra.org/wp-content/uploads/2016/07/default.jpg",
   },
+  description: {
+    type: Sequelize.STRING,
+  }
 });
 
 module.exports = { Pokemon };
