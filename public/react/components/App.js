@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { PokemonPageList } from "./PokemonPageList";
+import { PokemonList } from "./PokemonList";
 // import and prepend the api url to any fetch calls
 import apiURL from "../api";
 
 export const App = () => {
-  const [pokemonpages, setpokemonpages] = useState([]);
+  const [pokemons, setpokemons] = useState([]);
+  const [singlePokemon, setSinglePokemon] = useState([]);
 
   const fetchPages = async () => {
     try {
@@ -12,7 +13,8 @@ export const App = () => {
       const response = await fetch(`${apiURL}/pokemons`);
       const pokeData = await response.json();
       console.log(pokeData);
-      setpokemonpages(pokeData);
+      setSinglePokemon(null);
+      setpokemons(pokeData);
     } catch (err) {
       console.log("Oh no an error! ", err);
     }
@@ -26,9 +28,11 @@ export const App = () => {
   return (
     <main>
       <h1>Welcome to the Original Pokedex</h1>
-      <PokemonPageList
-        pokemonpages={pokemonpages}
-        setpokemonpages={setpokemonpages}
+      <PokemonList
+        pokemons={pokemons}
+        setpokemons={setpokemons}
+        singlePokemon={singlePokemon}
+        setSinglePokemon={setSinglePokemon}
       />
       <button>Add Pokemon</button>
     </main>
