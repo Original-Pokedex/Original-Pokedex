@@ -25,12 +25,12 @@ export const App = () => {
   console.log("pokemon store");
   return (
     <main>
-      <p id="quote"> Welcome to the Original Pokedex</p>
+      <h1>Welcome to the Original Pokedex</h1>
       <PokemonPageList
         pokemonpages={pokemonpages}
         setpokemonpages={setpokemonpages}
       />
-      <button>Add Pokemon!</button>
+      <button>Add Pokemon</button>
     </main>
   );
 };

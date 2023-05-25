@@ -3,8 +3,8 @@ import apiURL from '../api';
 
 export const PokemonPage = (props) => {
 
-    return (<>
+    return (<div id="single-pokemon">
         <h2>{props.pokemonpage.name}</h2>
         <img src={props.pokemonpage.image} width="150" height="150" />
-    </>)
+    </div>)
 }
