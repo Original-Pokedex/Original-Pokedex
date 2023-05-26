@@ -7,7 +7,7 @@ export const App = () => {
   const [pokemons, setpokemons] = useState([]);
   const [singlePokemon, setSinglePokemon] = useState([]);
 
-  const fetchPages = async () => {
+  const fetchPokemons = async () => {
     try {
       console.log("fetch activated");
       const response = await fetch(`${apiURL}/pokemons`);
@@ -21,7 +21,7 @@ export const App = () => {
   };
 
   useEffect(() => {
-    fetchPages();
+    fetchPokemons();
   }, []);
 
   console.log("pokemon store");
@@ -33,8 +33,8 @@ export const App = () => {
         setpokemons={setpokemons}
         singlePokemon={singlePokemon}
         setSinglePokemon={setSinglePokemon}
+        fetchPokemons={fetchPokemons}
       />
-      <button>Add Pokemon</button>
     </main>
   );
 };

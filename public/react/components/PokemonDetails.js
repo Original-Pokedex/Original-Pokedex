@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-// import { EditForm } from "./EditForm";
+import { EditForm } from "./EditForm";
 import apiURL from "../api";
 
 export const PokemonDetails = ({ props }) => {
-  //   const [showEditForm, setShowEditForm] = useState(false);
+    const [showEditForm, setShowEditForm] = useState(false);
 
   const fetchAllClick = async () => {
-    const res = await fetch(`${apiURL}/items`);
+    const res = await fetch(`${apiURL}/pokemons`);
     const data = await res.json();
-    props.setPokemon(null);
-    props.setPokemonList(data);
+    props.setSinglePokemon(null);
+    props.setpokemons(data);
   };
 
   const deleteClick = async () => {
-    const res = await fetch(`${apiURL}/items/${props.pokemon.id}`, {
+    const res = await fetch(`${apiURL}/pokemons/${props.pokemon.id}`, {
       method: "Delete",
     });
     const deletedData = await res.json();
@@ -50,7 +50,7 @@ export const PokemonDetails = ({ props }) => {
           <button className="button" onClick={editClick}>
             Edit
           </button>
-          {/* {showEditForm ? <EditForm props={props} /> : null} */}
+          {showEditForm ? <EditForm props={props} /> : null}
         </div>
       </div>
     </>
