@@ -9,4 +9,5 @@ import { App } from './App';
 it('should render', () => {
   render(<App />);
 
+  expect(screen.getByText('Pokedex')).toBeInTheDocument();
 });
