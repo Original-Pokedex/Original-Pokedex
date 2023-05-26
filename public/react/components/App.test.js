@@ -9,7 +9,7 @@ import { App } from './App';
 it('should render', () => {
   render(<App />);
 
-  expect(screen.getByText('Pokedex')).toBeInTheDocument();
+  expect(screen.getByText('Welcome to the Original Pokedex')).toBeInTheDocument();
 });
 
 it('should be a working test', () => {
