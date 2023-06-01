@@ -19,6 +19,8 @@ export const PokemonList = ({
       <AddForm
         pokemons={pokemons}
         setpokemons={setpokemons}
+        singlePokemon={singlePokemon}
+        setSinglePokemon={setSinglePokemon}
         fetchPokemons={fetchPokemons}
       />
     );
