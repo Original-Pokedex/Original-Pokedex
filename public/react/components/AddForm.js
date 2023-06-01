@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Pokemon } from "./Pokemon";
 import apiURL from "../api";
 
 export const AddForm = (props) => {
@@ -23,13 +24,13 @@ export const AddForm = (props) => {
       });
       const newData = await res.json();
       props.setpokemons([...props.pokemon, newData]);
+      fetchAllClick();
     } catch (err) {
       console.log("Oh no an error! ", err);
     }
   };
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
+  const handleSubmit = () => {
     postPokemon();
 
     setName("");
@@ -37,7 +38,6 @@ export const AddForm = (props) => {
     setDescription("");
     setImage("");
 
-    props.setbuttonClick(false);
     props.fetchPokemons();
   };
 
