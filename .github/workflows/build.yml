@@ -20,4 +20,4 @@ jobs:
       - name: Deploy
         run: railway up
         env:
-          RAILWAY_TOKEN: ${{ secrets.POKEDEX_TOKEN_RAILWAY }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
