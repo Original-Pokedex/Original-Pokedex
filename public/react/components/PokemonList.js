@@ -9,13 +9,24 @@ export const PokemonList = ({
   setSinglePokemon,
   fetchPokemons,
 }) => {
-  const [addbuttonClick, setbuttonClick] = useState(false);
+  const [addForm, setAddForm] = useState(null);
+  const [addButtonClicked, setAddButtonClicked] = useState(false);
 
   const handleClick = () => {
-    setbuttonClick(!addbuttonClick);
+    console.log("this is being clicked ");
+    setAddButtonClicked(true);
+    setAddForm(
+      <AddForm
+        pokemons={pokemons}
+        setpokemons={setpokemons}
+        fetchPokemons={fetchPokemons}
+      />
+    );
   };
 
-  return singlePokemon ? (
+  return addButtonClicked ? (
+    <div>{addForm}</div>
+  ) : singlePokemon ? (
     <div>
       {singlePokemon.map((pokemon, idx) => {
         return (
@@ -41,15 +52,9 @@ export const PokemonList = ({
           />
         );
       })}
-      <button id="addbutton" onClick={handleClick}>Add Pokemon</button>
-      {addbuttonClick ? (
-        <AddForm
-          setbuttonClick={setbuttonClick}
-          pokemons={pokemons}
-          setpokemons={setpokemons}
-          fetchPokemons={fetchPokemons}
-        />
-      ) : null}
+      <button id="addbutton" onClick={handleClick}>
+        Add Pokemon
+      </button>
     </div>
   );
 };

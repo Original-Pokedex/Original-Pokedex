@@ -42,39 +42,41 @@ export const AddForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Name"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Type"
-        name="type"
-        value={type}
-        onChange={(e) => setType(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        name="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Type"
+          name="type"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
 
-      <input
-        type="text"
-        placeholder="Image URL"
-        name="image"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-      />
-      <button className="button" type="submit">
-        Submit
-      </button>
-    </form>
+        <input
+          type="text"
+          placeholder="Image URL"
+          name="image"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        <button className="button" id="submit" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
